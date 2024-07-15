@@ -1,15 +1,14 @@
 server:
   port: 8081
 
-
 spring:
+  application:
+    name: USER-SERVICE
   datasource:
     url: jdbc:mysql://localhost:3306/microservices
     username: root
     password: Alok_8809
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-
 
   jpa:
     hibernate:
@@ -19,3 +18,12 @@ spring:
   properties:
     hibernate:
       dialect: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
